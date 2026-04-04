@@ -1,6 +1,6 @@
 resource "aws_nat_gateway" "ngw" {
     allocation_id = aws_eip.nat.id
-    subnet_id = var.public_subnets[0].id
+    subnet_id = values(aws_subnet.public)[1].id
 
     tags = {
         Name = "${var.project_name}-ngw"
