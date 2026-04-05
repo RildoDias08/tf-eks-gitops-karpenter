@@ -15,7 +15,3 @@ terraform{
     #dynamodb_table = "tf-eks-gitops-karpenter-locks"
   }
 }
-
-provider "aws" {
-  profile = "bia"
-}
