@@ -1,0 +1,67 @@
+# ------------------------------
+# Terraform (security + local state)
+# ------------------------------
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Keep dependency lock file versioned (reproducible providers)
+!**/.terraform.lock.hcl
+
+# ------------------------------
+# Env / secrets
+# ------------------------------
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.jks
+*.kubeconfig
+
+# ------------------------------
+# Node / Next.js
+# ------------------------------
+**/node_modules/
+**/.next/
+**/out/
+**/dist/
+**/coverage/
+**/.turbo/
+**/.npm/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+
+# ------------------------------
+# .NET / C#
+# ------------------------------
+**/bin/
+**/obj/
+**/.vs/
+**/*.user
+**/*.suo
+**/*.userosscache
+**/*.sln.docstates
+
+# ------------------------------
+# IDE / OS
+# ------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
