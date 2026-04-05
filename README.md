@@ -11,7 +11,7 @@ Infraestrutura e aplicação de exemplo para Kubernetes na AWS com foco em:
 
 O projeto está organizado em três camadas principais de infraestrutura e uma camada de aplicação:
 
-1. `remote-backend/`: cria bucket S3 para `terraform remote state` com lock e versionamento configurado.
+1. `remote-backend/`: cria bucket S3 para `terraform remote state` com lock e versionamento configurado. 
 2. `networking/`: cria VPC, subnets públicas/privadas, IGW, NAT e rotas.
 3. `eks/`: cria cluster EKS, node group gerenciado e repositórios ECR.
 4. `app/`: contém backend ASP.NET Core e frontend Next.js para empacotamento em containers.
