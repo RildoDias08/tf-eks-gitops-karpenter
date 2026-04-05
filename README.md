@@ -123,3 +123,4 @@ cd app/frontend/youtube-live-app
 docker build -t youtube-live-app-frontend:local .
 ```
 
+Projeto derivado da Imersão Devops Na Nuvem do Kenerry Serain.
