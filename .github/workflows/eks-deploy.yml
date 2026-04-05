@@ -42,7 +42,7 @@ jobs:
 
     - uses: actions/checkout@v6
       with:
-        repository: 'RildoDias08/tf-eks-gitops-karpenter'
+        repository: 'RildoDias08/GitOps'
         token: ${{ secrets.PAT }}
 
     - name: Kustomize Edit
@@ -84,7 +84,7 @@ jobs:
 
     - uses: actions/checkout@v6
       with:
-        repository: 'RildoDias08/tf-eks-gitops-karpenter'
+        repository: 'RildoDias08/GitOps'
         token: ${{ secrets.PAT }}
 
     - name: Kustomize Edit
