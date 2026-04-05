@@ -6,7 +6,7 @@ on:
     - main
 env:
     BACKEND_REPOSITORY: app/backend
-    FRONTEND_REPOSITORY: app/front
+    FRONTEND_REPOSITORY: app/frontend
     IMAGE_TAG: ${{ github.sha }}
 
 permissions:
@@ -52,7 +52,7 @@ jobs:
         kustomize edit set image $REGISTRY/$BACKEND_REPOSITORY=$REGISTRY/$BACKEND_REPOSITORY:$IMAGE_TAG
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add ./kustomization.yml
+        git add kustomization.yaml
         git commit -m "[BOT] Changing image to $REGISTRY/$BACKEND_REPOSITORY:$IMAGE_TAG"
         git push
 
@@ -94,6 +94,6 @@ jobs:
         kustomize edit set image $REGISTRY/$FRONTEND_REPOSITORY=$REGISTRY/$FRONTEND_REPOSITORY:$IMAGE_TAG
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add ./kustomization.yml
+        git add kustomization.yaml
         git commit -m "[BOT] Changing image to $REGISTRY/$FRONTEND_REPOSITORY:$IMAGE_TAG"
         git push
