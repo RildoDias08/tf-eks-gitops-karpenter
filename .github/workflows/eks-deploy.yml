@@ -43,7 +43,7 @@ jobs:
     - uses: actions/checkout@v6
       with:
         repository: 'RildoDias08/tf-eks-gitops-karpenter'
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.PATH }}
 
     - name: Kustomize Edit
       env:
@@ -85,7 +85,7 @@ jobs:
     - uses: actions/checkout@v6
       with:
         repository: 'RildoDias08/tf-eks-gitops-karpenter'
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.PATH }}
 
     - name: Kustomize Edit
       env:
