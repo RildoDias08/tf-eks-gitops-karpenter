@@ -8,14 +8,14 @@ variable "vpc" {
 
 variable "public_subnets" {
   type = map(object({
-    cidr = string
+    cidr_block = string
     az   = string   
   }))
 }
 
 variable "private_subnets" {
   type = map(object({
-    cidr = string
+    cidr_block = string
     az   = string   
   }))
 }
