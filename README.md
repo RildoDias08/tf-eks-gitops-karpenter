@@ -20,13 +20,38 @@ O projeto está organizado em três camadas principais de infraestrutura e uma c
 
 ```mermaid
 flowchart TD
-    A["remote-backend<br/>(S3 state)"] --> B["networking<br/>(VPC, Subnets, IGW, NAT, Routes)"]
-    B --> C["eks<br/>(EKS Cluster, Node Group, ECR)"]
-    C --> D["ECR app-back / app-front"]
-    D --> E["Deploy no EKS"]
-    E --> F["Frontend (Next.js)"]
-    E --> G["Backend (ASP.NET Core)"]
-    F --> G
+    subgraph Terraform Infra
+        A["remote-backend<br/>(S3 Remote State + Lock)"]
+        B["networking<br/>(VPC, Public/Private Subnets,<br/>IGW, NAT, Route Tables)"]
+        C["eks<br/>(EKS Cluster + Managed Node Group)"]
+        D["ECR Repositories<br/>(app/backend + app/front)"]
+
+        A --> B --> C --> D
+    end
+
+    subgraph Application
+        E["Backend<br/>(ASP.NET Core .NET 8)"]
+        F["Frontend<br/>(Next.js 14)"]
+        G["Docker Build Backend"]
+        H["Docker Build Frontend"]
+
+        E --> G
+        F --> H
+    end
+
+    subgraph Kubernetes Runtime
+        I["Kubernetes Deployments"]
+        J["Backend Pods"]
+        K["Frontend Pods"]
+
+        I --> J
+        I --> K
+    end
+
+    G --> D
+    H --> D
+    D --> I
+    C --> I
 ```
 
 ## Estrutura do repositório
