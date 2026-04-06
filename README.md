@@ -121,32 +121,11 @@ terraform apply
 - `Program.cs` publica as rotas sob prefixo `/backend`
 - Dockerfile multi-stage para build e runtime em .NET 8
 
-Build local da imagem:
-
-```bash
-cd app/backend/YoutubeLiveApp
-docker build -t youtube-live-app-backend:local .
-```
-
 ### Frontend (`app/frontend/youtube-live-app`)
 
 - Projeto Next.js 14 inicial (template padrão)
 - Dockerfile multi-stage com build e execução via `npm start`
 
-Execução local (sem Docker):
-
-```bash
-cd app/frontend/youtube-live-app
-npm ci
-npm run dev
-```
-
-Build local da imagem:
-
-```bash
-cd app/frontend/youtube-live-app
-docker build -t youtube-live-app-frontend:local .
-```
 
 ## Próximos passos recomendados
 
