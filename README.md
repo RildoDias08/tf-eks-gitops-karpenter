@@ -135,3 +135,5 @@ terraform apply
 - Exposição da aplicação via Ingress com AWS Load Balancer Controller (Helm)
 
 Projeto derivado da Imersão Devops Na Nuvem do Kenerry Serain.
+
+Continuação no repo [GitOps](https://github.com/RildoDias08/GitOps).
