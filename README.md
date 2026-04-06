@@ -7,6 +7,21 @@ Infraestrutura e aplicação de exemplo para Kubernetes na AWS com foco em:
 - Aplicação full stack (Next.js + ASP.NET Core)
 - Base para fluxo GitOps e uso de Karpenter (ainda não implementado neste repositório)
 
+
+## Aplicação
+
+### Backend (`app/backend/YoutubeLiveApp`)
+
+- API ASP.NET Core com endpoint de saúde e endpoint de exemplo (`WeatherForecast`)
+- `Program.cs` publica as rotas sob prefixo `/backend`
+- Dockerfile multi-stage para build e runtime em .NET 8
+
+### Frontend (`app/frontend/youtube-live-app`)
+
+- Projeto Next.js 14 inicial (template padrão)
+- Dockerfile multi-stage com build e execução via `npm start`
+
+
 ## Visão geral da arquitetura
 
 O projeto está organizado em três camadas principais de infraestrutura e uma camada de aplicação:
@@ -15,6 +30,7 @@ O projeto está organizado em três camadas principais de infraestrutura e uma c
 2. `networking/`: cria VPC, subnets públicas/privadas, IGW, NAT e rotas.
 3. `eks/`: cria cluster EKS, node group gerenciado e repositórios ECR.
 4. `app/`: contém backend ASP.NET Core e frontend Next.js para empacotamento em containers.
+
 
 ## Flowchart do projeto
 
@@ -112,20 +128,6 @@ terraform init
 terraform plan
 terraform apply
 ```
-
-## Aplicação
-
-### Backend (`app/backend/YoutubeLiveApp`)
-
-- API ASP.NET Core com endpoint de saúde e endpoint de exemplo (`WeatherForecast`)
-- `Program.cs` publica as rotas sob prefixo `/backend`
-- Dockerfile multi-stage para build e runtime em .NET 8
-
-### Frontend (`app/frontend/youtube-live-app`)
-
-- Projeto Next.js 14 inicial (template padrão)
-- Dockerfile multi-stage com build e execução via `npm start`
-
 
 ## Próximos passos recomendados
 
