@@ -6,8 +6,6 @@ on:
     - main
     paths:
         - "app/**"
-        - "eks/**"
-        - "networking/**"
 env:
     BACKEND_REPOSITORY: app/backend
     FRONTEND_REPOSITORY: app/frontend
