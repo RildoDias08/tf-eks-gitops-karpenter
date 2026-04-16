@@ -132,7 +132,6 @@ terraform apply
 ## Próximos passos recomendados
 
 - Integração do Karpenter para autoscaling inteligente de nós
-- Exposição da aplicação via Ingress com AWS Load Balancer Controller (Helm)
 
 Projeto derivado da Imersão Devops Na Nuvem do Kenerry Serain.
 
