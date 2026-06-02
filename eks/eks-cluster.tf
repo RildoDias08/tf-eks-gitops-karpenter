@@ -1,7 +1,7 @@
 resource "aws_eks_cluster" "this" {
-  name     = "${local.project_name}-eks-cluster"
-  role_arn = aws_iam_role.eks_cluster.arn
-  enabled_cluster_log_types = [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
+  name                      = "${local.project_name}-eks-cluster"
+  role_arn                  = aws_iam_role.eks_cluster.arn
+  enabled_cluster_log_types = ["api", "audit", "authenticator", "controllerManager", "scheduler"]
 
   access_config {
     authentication_mode = "API_AND_CONFIG_MAP"
@@ -12,5 +12,5 @@ resource "aws_eks_cluster" "this" {
   }
 
   depends_on = [aws_iam_role_policy_attachment.eks_cluster_AmazonEKSClusterPolicy]
-  
+
 }
