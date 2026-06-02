@@ -15,5 +15,6 @@ resource "aws_eks_node_group" "this" {
   depends_on = [aws_iam_role_policy_attachment.eks_node_group_AmazonEKSWorkerNodePolicy
                  ,aws_iam_role_policy_attachment.eks_node_group_AmazonEKS_CNI_Policy
                  ,aws_iam_role_policy_attachment.eks_node_group_AmazonEC2ContainerRegistryReadOnly
+                 ,aws_iam_role_policy_attachment.eks_node_group_AmazonSSMManagedInstanceCore
                  ]
 }
