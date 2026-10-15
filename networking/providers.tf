@@ -1,14 +1,20 @@
-terraform{
-    required_providers {
-      aws = {
-        source  = "hashicorp/aws"
-        version = "~> 6.38"
-      }
+
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.38"
     }
-    backend "s3" {
-    bucket = "tf-eks-gitops-karpenter-s3"
-    key    = "networking/terraform.tfstate"
-    region = "us-east-1"
+
+  }
+
+  backend "s3" {
+    bucket  = "tf-eks-gitops-karpenter-s3"
+    key     = "networking/terraform.tfstate"
+    region  = "us-east-1"
+    profile = "bia"
+
 
     #deprecado
     #dynamodb_table = "tf-eks-gitops-karpenter-locks"
@@ -18,3 +24,8 @@ terraform{
   }
 }
 
+
+provider "aws" {
+  profile = "bia"
+  region  = "us-east-1"
+}

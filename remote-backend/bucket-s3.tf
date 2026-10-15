@@ -4,7 +4,7 @@ resource "aws_s3_bucket" "remote_state" {
   tags = {
     Name = "tf-eks-gitops-karpenter-s3"
   }
-  
+
 }
 
 resource "aws_s3_bucket_versioning" "versioning" {

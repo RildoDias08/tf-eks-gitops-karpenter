@@ -6,3 +6,8 @@ terraform {
     }
   }
 }
+
+provider "aws" {
+  profile = "bia"
+  region  = "us-east-1"
+}

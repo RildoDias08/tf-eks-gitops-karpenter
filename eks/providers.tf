@@ -9,9 +9,15 @@ terraform {
     bucket       = "tf-eks-gitops-karpenter-s3"
     key          = "eks/terraform.tfstate"
     region       = "us-east-1"
+    profile      = "bia"
     use_lockfile = true
 
     #deprecado
     #dynamodb_table = "tf-eks-gitops-karpenter-locks"
   }
+}
+
+provider "aws" {
+  profile = "bia"
+  region  = "us-east-1"
 }
