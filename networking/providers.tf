@@ -1,5 +1,3 @@
-
-
 terraform {
   required_providers {
     aws = {
@@ -10,10 +8,10 @@ terraform {
   }
 
   backend "s3" {
-    bucket  = "tf-eks-gitops-karpenter-s3"
-    key     = "networking/terraform.tfstate"
-    region  = "us-east-1"
-    profile = "bia"
+    bucket = "tf-eks-gitops-karpenter-s3"
+    key    = "networking/terraform.tfstate"
+    region = "us-east-1"
+
 
 
     #deprecado
@@ -22,10 +20,4 @@ terraform {
     #metodo de lock moderno
     use_lockfile = true
   }
-}
-
-
-provider "aws" {
-  profile = "bia"
-  region  = "us-east-1"
 }
